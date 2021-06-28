@@ -1,0 +1,5 @@
+mscdiploma/ms_facereconstruction/resources/BFM_2009/** filter=lfs diff=lfs merge=lfs -text
+mscdiploma/ms_facereconstruction/resources/Exp_Juyong_3DFace/** filter=lfs diff=lfs merge=lfs -text
+mscdiploma/ms_facereconstruction/resources/Ms_Deep3DFaceReconstruction/** filter=lfs diff=lfs merge=lfs -text
+mscdiploma/ms_facereconstruction/resources/UV/** filter=lfs diff=lfs merge=lfs -text
+mscdiploma/ms_facereconstruction/resources/Yadira_face3d/** filter=lfs diff=lfs merge=lfs -text
