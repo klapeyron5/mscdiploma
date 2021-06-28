@@ -1,5 +1,5 @@
-from ..transform import base as tb
-from ..transform.file_system import KEY_file
+from .transform import base as tb
+from .transform.file_system import KEY_file
 from .video import KEY_video_file, KEY_frames_dir
 import os
 import numpy as np

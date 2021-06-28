@@ -1,4 +1,4 @@
-from nirvana.transform import base as tb
+from .transform import base as tb
 from . import mappings
 from .video import Pipe_Video2Frames
 import os
@@ -145,7 +145,7 @@ class GetBboxFromOpenposeLms(tb.TransformNoDataIndependentRandomness):
         return points
 
 
-from nirvana.transform import hwc
+from .transform import hwc
 class Pipe_GetHeadCropFromHeadBbox(tb.Pipe):
     KEY_CALL_IMMUT_head_bbox = Pipe_GetBboxFromOpenposeLms.KEY_OUT_head_bbox
     KEY_CALL_IMMUT_hwc = hwc.KEY_hwc

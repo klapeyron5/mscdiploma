@@ -1,4 +1,4 @@
-from nirvana.transform.base import TransformNoDataIndependentRandomness, Pipe, KEY_batch
+from .transform.base import TransformNoDataIndependentRandomness, Pipe, KEY_batch
 from . import mappings
 import os
 

@@ -1,5 +1,5 @@
-from ..transform import base as tb
-from ..transform.hwc import img
+from .transform import base as tb
+from .transform.hwc import img
 from . import mappings, video_example, video, openpose, fan2d
 from .ms_facereconstruction import main as ms_face
 import numpy as np
@@ -335,7 +335,7 @@ def tst():
     tp = tb.Cacher(**{
         tb.Cacher.KEY_INIT_cache_dir: '/tmp',
         tb.Cacher.KEY_INIT_name: 'mscdiploma_tst',
-        tb.Cacher.KEY_INIT_use_cache: True,
+        tb.Cacher.KEY_INIT_use_cache: False,
         tb.Cacher.KEY_INIT_sample_transform_cls_cnfg: [
             tb.TransformPipeline, {
             tb.TransformPipeline.KEY_INIT_transforms: [
@@ -360,19 +360,25 @@ def tst():
 
         im = b['img_vis']
         b = b['DetectedObjects']
-        fit_angles_from_op(b[0]['Bones'], im)
+        # fit_angles_from_op(b[0]['Bones'], im)
 
         assert len(b)>0
         bangles = []
+        bbones = []
         for do in b:
             if do['angles'] is not None:
                 bangles.append(do['angles'])
+                assert do['Bones'] is not None
+                bbones.append(do['Bones'])
         if not len(bangles)==1:
             assert i==14
             b = bangles[1]
+            bbon = bbones[1]
         else:
             b = bangles[0]
+            bbon = bbones[0]
         b = np.array([np.rad2deg(x) for x in b])
+        fit_angles_from_op(bbon, im)
 
         for x in [a,b]:
             assert len(x)==3

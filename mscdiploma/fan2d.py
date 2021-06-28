@@ -1,7 +1,7 @@
-from nirvana.transform import base as tb
+from .transform import base as tb
 import numpy as np
 import face_alignment
-from ..transform import hwc
+from .transform import hwc
 
 
 class Pipe_GetLms2d5n(tb.Pipe):

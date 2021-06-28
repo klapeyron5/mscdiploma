@@ -1,4 +1,4 @@
-from nirvana.transform.base import TransformNoDataIndependentRandomness, Pipe
+from .transform.base import TransformNoDataIndependentRandomness, Pipe
 import os
 
 

@@ -171,8 +171,8 @@ def test():
     plt.imshow(vis.astype(int)); plt.show()
     print()
 
-from ...transform import base as tb
-from ...transform import hwc
+from ..transform import base as tb
+from ..transform import hwc
 from ..fan2d import Pipe_GetLms2d5n
 import numpy as np
 class Pipe_MsFaceReconstruction(tb.Pipe):
